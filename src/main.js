@@ -43,7 +43,7 @@ Vue.directive('texto', {
 
 Vue.directive('posicao', {
     created(el, binding) {
-        console.log(el, binding.arg, binding.value);
+        //console.log(el, binding.arg, binding.value);
 
         const posicoesPossiveis = ['relative', 'fixed', 'absolute'];
 
@@ -51,6 +51,12 @@ Vue.directive('posicao', {
             el.style.position = binding.arg;
             el.style.top = `${binding.value}px`;
         }
+    }
+});
+
+Vue.directive('informacao', {
+    created(el, binding) {
+        console.log(el, binding.arg, binding.modifiers, binding.value);
     }
 });
 
