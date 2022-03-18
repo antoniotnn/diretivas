@@ -72,8 +72,15 @@ Vue.directive('informacao', {
                 informacaoSpan.addEventListener('click', (event) => {
                     event.stopPropagation();
                     informacaoSpan.remove();
-                })
+                });
+
+                if(binding.modifiers['sairAutomaticamente']) {
+                    setTimeout(() => {
+                        informacaoSpan.remove();
+                    }, 3000);
+                }
             }
+
         }
 
         if(binding.arg === 'destacado') {
@@ -103,8 +110,15 @@ Vue.directive('informacao', {
                 informacaoDivContainer.addEventListener('click', (event) => {
                     event.stopPropagation();
                     informacaoDivContainer.remove();
-                })
+                });
+                
+                if(binding.modifiers['sairAutomaticamente']) {
+                    setTimeout(() => {
+                        informacaoDivContainer.remove();
+                    }, 3000);
+                }
             }
+
         }
 
         if(binding.modifiers['umClickMouse']) {
